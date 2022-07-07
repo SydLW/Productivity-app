@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styling/Form.css";
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -24,7 +25,6 @@ export default class Form extends React.Component {
   }
 
   onSubmit(e) {
-    console.log(this.state);
     this.props.parentCallback(this.state);
     e.preventDefault();
     this.setState({
@@ -42,7 +42,8 @@ export default class Form extends React.Component {
               <p className="title">Day of the Week</p>
               <input
                 className="form-control"
-                type="text"
+                //change it to a date picker
+                type="date"
                 value={this.state.day}
                 onChange={this.onChangeDay}
               ></input>
@@ -53,13 +54,15 @@ export default class Form extends React.Component {
               <p className="title">Productive hours</p>
               <input
                 className="form-control"
-                type="text"
+                //change to numbers
+                type="number"
                 value={this.state.hours}
                 onChange={this.onChangeHours}
               ></input>
             </label>
           </div>
         </form>
+
         <button onClick={this.onSubmit}>Submit</button>
       </div>
     );

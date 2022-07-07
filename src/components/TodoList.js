@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import DataViewItem from "./DataViewItem";
-import "../styling/DataView.css";
+import TodoListItem from "./TodoListItem";
+import "../styling/TodoList.css";
 
-export default class DataView extends React.Component {
+export default class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,27 +19,23 @@ export default class DataView extends React.Component {
     this.setState({ editing: false });
   };
 
-  handleDateChange = (index, newItemDate) => {
-    this.props.editDate(index, newItemDate);
-  };
-  handleTimeChange = (index, newItemTime) => {
-    this.props.editTime(index, newItemTime);
+  handleItemChange = (index, newItemString) => {
+    this.props.edit(index, newItemString);
   };
 
   render() {
     const { entries } = this.props;
     return (
-      <div className="list">
-        <ul className="data">
-          Entries
+      <div className="Todolist">
+        <ul className="items">
+          Todo List
           {entries.map((arrayItem, index) => (
-            <DataViewItem
-              item={arrayItem}
+            <TodoListItem
               index={index}
-              delete={this.props.delete}
+              item={arrayItem}
               editing={this.state.editing}
-              onDateChange={this.handleDateChange}
-              onTimeChange={this.handleTimeChange}
+              onDelete={this.props.delete}
+              onChange={this.handleItemChange}
             />
           ))}
         </ul>
