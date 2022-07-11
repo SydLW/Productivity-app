@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 //create a todo list for the day
 export default class AddTodo extends React.Component {
   constructor(props) {

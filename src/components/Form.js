@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styling/Form.css";
 
 export default class Form extends React.Component {

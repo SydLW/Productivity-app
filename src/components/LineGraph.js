@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../styling/LineGraph.css";
 import {
   LineChart,
@@ -12,10 +12,6 @@ import {
 } from "recharts";
 
 export default class LineGraph extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="graph">
